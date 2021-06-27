@@ -1,14 +1,12 @@
 # Detección de Amenazas Ransomware en Redes Empresariales EDR
 
-<<<<<<< HEAD
 #### Trabajo de Fin de Grado curso 2020-2021 realizado por Gonzalo Figueroa del Val, Marina López Osorio y Gonzalo Fernández Megia en los Grados en Ingeniería Informática, Ingeniería del Software e Ingeniería de Computadores.
 
 #### Manual de uso del sistema propuesto
 
 La primera sección incluye los requisitos necesarios para el correcto funcionamiento del código. La sección de construcción del *dataset* proporciona información acerca de la limpieza y composición de este pero su ejecución es opcional ya que incluimos los *datasets* (dataset_binario.csv y dataset_suma.csv) en [esta carpeta](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/dataset) listos para su utilización. Por último, la sección de ejecución del modelo proporciona información del uso del código del modelo construido y la generación de resultados.
-=======
+
 La sección de construcción del *dataset* proporciona información acerca de la limpieza y composición de este pero su ejecución es opcional ya que incluimos los *datasets* (dataset_binario.csv y dataset_suma.csv) listos para su utilización.
->>>>>>> 3581f3e443e4025cbf792ff172eae0aca2421c32
 
 ## Instalación de requisitos previa
 
@@ -25,15 +23,13 @@ Antes de ejecutar ningún script, será necesario instalar una serie de dependen
 
 <details><summary>Expandir</summary>
 
-<<<<<<< HEAD
 El desarrollo de los *datasets* se ha realizado en un equipo con sistema operativo Linux con distribución Ubuntu 18.0.5 LTS. Antes de ejecutar ningún script será necesario extraer todos los informes del fichero [data](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/dataset/data.zip)
 
 Para obtener el [dataset_binario](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/dataset/dataset_binario.csv) es necesario ejecutar el script [parser_binario.py](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/dataset/parser_binario.py):
-=======
+
 El desarrollo de los *datasets* se ha realizado en un equipo con sistema operativo Linux con distribución Ubuntu 18.0.5 LTS.  
 
 Para obtener el [dataset_binario](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/Dataset/dataset_binario.csv) es necesario ejecutar el script [parser_binario.py](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/Dataset/parser_binario.py):
->>>>>>> 3581f3e443e4025cbf792ff172eae0aca2421c32
   
     python3 parser_binario.py
   
@@ -62,11 +58,10 @@ La salida obtenida por consola será la siguiente:
     0    357
     Name: label, dtype: int64
   
-<<<<<<< HEAD
+
 Para obtener el [dataset_suma](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/dataset/dataset_suma.csv) es necesario ejecutar el script [parser_suma.py](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/dataset/parser_suma.py):
-=======
+
 Para obtener el [dataset_suma](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/Dataset/dataset_suma.csv) es necesario ejecutar el script [parser_suma.py](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/Dataset/parser_suma.py):
->>>>>>> 3581f3e443e4025cbf792ff172eae0aca2421c32
   
     python3 parser_suma.py
   
@@ -103,7 +98,6 @@ Con esto, los dos *datasets* estarán preparados.
 
 <details><summary>Expandir</summary>
 
-<<<<<<< HEAD
 La ejecución del [modelo](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/modelo.py) se ha llevado a cabo en una máquina virtual Kali Linux 2020.3 utilizando el software de virtualización VirtualBox y se ha hecho uso de la versión 3.9.2 de Python.
 
 El modelo realizará pruebas y generará gráficos de barras para diferentes métricas con los siguientes algoritmos:
@@ -220,7 +214,4 @@ ax.legend(loc='lower left')
 pyplot.savefig("ComparacionKFold.jpg")
 ```
 
-=======
-  
->>>>>>> 3581f3e443e4025cbf792ff172eae0aca2421c32
 </details>
