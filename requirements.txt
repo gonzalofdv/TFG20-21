@@ -1,0 +1,11 @@
+#### Requirements ####
+#
+json
+csv
+os
+functools
+glob
+pandas
+sklearn
+matplotlib
+#
