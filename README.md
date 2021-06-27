@@ -1,14 +1,12 @@
 # Detección de Amenazas Ransomware en Redes Empresariales EDR
 
-<<<<<<< HEAD
 #### Trabajo de Fin de Grado curso 2020-2021 realizado por Gonzalo Figueroa del Val, Marina López Osorio y Gonzalo Fernández Megia en los Grados en Ingeniería Informática, Ingeniería del Software e Ingeniería de Computadores.
 
 #### Manual de uso del sistema propuesto
 
 La primera sección incluye los requisitos necesarios para el correcto funcionamiento del código. La sección de construcción del *dataset* proporciona información acerca de la limpieza y composición de este pero su ejecución es opcional ya que incluimos los *datasets* (dataset_binario.csv y dataset_suma.csv) en [esta carpeta](https://gitlab.fdi.ucm.es/marina.lopez/tfg-ransomware-20-21/-/blob/master/dataset) listos para su utilización. Por último, la sección de ejecución del modelo proporciona información del uso del código del modelo construido y la generación de resultados.
-=======
+
 La sección de construcción del *dataset* proporciona información acerca de la limpieza y composición de este pero su ejecución es opcional ya que incluimos los *datasets* (dataset_binario.csv y dataset_suma.csv) listos para su utilización.
->>>>>>> 3581f3e443e4025cbf792ff172eae0aca2421c32
 
 ## Instalación de requisitos previa
 
