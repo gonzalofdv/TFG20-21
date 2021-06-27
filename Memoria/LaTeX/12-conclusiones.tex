@@ -1,0 +1,28 @@
+\section{Conclusiones} \label{conclusiones}
+\noindent Los ataques ransomware son cada vez más comunes y, en consecuencia, son más las empresas y organizaciones que los sufren, en concreto las \gls{SME}. Estas constituyen un pilar fundamental en la economía europea y sus recursos destinados a la prevención de ciber-ataques son más limitados. Por lo tanto, existe la necesidad de elaborar un modelo \gls{ML} \textit{open source} de fácil uso, capaz de proteger a este tipo de empresas de manera eficaz. Los datos de entrada del modelo consisten en las llamadas a la \gls{API} de Windows que realizan las muestras ejecutables. Tras la realización de este trabajo se han obtenido las siguientes conclusiones:
+
+
+\begin{itemize}
+    \item En el campo de la detección de malware, el uso de \gls{ML} es fundamental para obtener resultados óptimos, por lo que se opta por crear un modelo de \gls{ML}.
+    \item En trabajos sobre análisis y detección tanto de malware como de ransomware, los algoritmos utilizados en los modelos de \gls{ML} son algoritmos de aprendizaje supervisado.
+    \item Las llamadas a la \gls{API} de Windows son un atributo fiable para analizar y detectar ransomware, ya que una gran cantidad de proyectos las emplean como características principales para la construcción de sus modelos.
+    \item Usar el número de llamadas a cada una de las \gls{API}s para construir un \textit{dataset} proporciona mejores resultados que considerar únicamente la aparición de estas con una representación binaria. Esto se evidencia en los experimentos, donde se usan dos \textit{datasets}, \textit{dataset binario} y \textit{dataset suma}, siendo el \textit{dataset suma} el que obtiene una mejora de alrededor de un 10\% en los resultados.
+    \item El \textit{sandboxing} es una técnica muy fiable para la ejecución y análisis de muestras en un entorno seguro. Por lo tanto, se construye un laboratorio de análisis de malware para examinar este tipo de muestras, puesto que suponen un gran riesgo para los equipos. Para analizar las muestras, se utiliza una herramienta llamada Cuckoo Sandbox, que ofrece multitud de configuraciones para recoger características específicas de las muestras.
+    \item La mayoría de los estudios relacionados con la detección de ransomware utilizan \textit{datasets} relativamente pequeños, en comparación con la cantidad de muestras que se utilizan para el \gls{ML} en general. Por lo tanto, en este trabajo se ha utilizado un primer \textit{dataset} de extensión similar a los de los otros trabajos, obteniendo una precisión del 87\%, y un segundo \textit{dataset} considerablemente mayor, obteniendo una precisión del 98\%. Con esto se concluye que el sistema propuesto obtiene mejores resultados con un \textit{dataset} más extenso que los otros trabajos usando menos datos.
+    \item En la experimentación se han utilizado 7 algoritmos de \gls{ML} y \gls{RF} ha sido el que mejor resultados ofrece a la hora de detectar muestras de ransomware, siendo mejor que otros algoritmos como \gls{DT}, \gls{SVM} o \gls{NB}.
+
+    %\item Los trabajos estudiados con valores de precisión más altos son un 98\% en \cite{shallow}, 98\% en \cite{detecting} y 99\% en \cite{Kok2020}. La precisión del modelo propuesto es de un 98\% %la he reescrito arriba, uniendola con otra y no mencionando los otros trabajos xq no lo veo necesario 
+\end{itemize}
+
+
+\section{Trabajo Futuro}
+\noindent Las posibles líneas de investigación y desarrollo en un futuro son las siguientes:
+
+\begin{itemize}
+    \item Implementación de un modelo cliente-servidor incluyendo una \gls{API} de consumo o una interfaz gráfica para facilitar el uso del modelo. De esta manera, apoyándose en el modelo de \gls{ML} construido, sería posible analizar archivos para detectar la posible presencia de ransomware.
+    \item Incluir un sistema basado en firmas para la detección de ransomware, almacenando dichas firmas en una base de datos accedida para comparar las firmas de las nuevas muestras analizadas.
+    \item Implementar detección temprana de ransomware, encontrando la presencia del mismo antes de su ejecución.
+    \item Tras la preparación y limpieza del \textit{dataset}, se ha reducido el número de muestras finales, por lo es conveniente continuar ampliando el conjunto de datos con muestras de otras fuentes, aumentando así la fiabilidad del sistema.
+    \item Considerar otras perspectivas para mejorar la detección de ransomware. Entre las posibles se encuentran analizar las conexiones a la red efectuadas por la muestra, la entropía del sistema, la monitorización del sistema de archivos o la observación de los \gls{HPC}, tal y como se ha visto en otros trabajos relacionados en el Capítulo \ref{Capitulo4}.
+    \item Tener en cuenta muestras de malware y no solamente de ransomware, creando un modelo con más posibilidades de uso.
+\end{itemize}

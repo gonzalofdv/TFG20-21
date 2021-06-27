@@ -1,0 +1,208 @@
+\noindent A continuación, se expone una tabla \ref{tab:tabla1} con muchas de las familias de ransomware más conocidas \cite{7}. No se listan todas, ya que además de haber una gran cantidad de ellas, hay infinidad de variantes que simplemente son copias de otras familias o son muy similares y no merece la pena nombrarlas.
+
+{\footnotesize
+\begin{longtable}{|p{0.24\textwidth}|p{0.17\textwidth}|p{0.5\textwidth}|}
+%\arrayrulecolor{gray}
+\caption{Familias de ransomware.} 
+\label{tab:tabla1}
+\\
+\hline
+    \rowcolor[HTML]{C0C0C0} 
+    \textbf{Familia} &
+    \textbf{Alias} &
+    \textbf{Descripción} \\
+\hline
+\endfirsthead
+
+\hline
+    \rowcolor[HTML]{C0C0C0} 
+    \textbf{Familia} &
+    \textbf{Alias} &
+    \textbf{Descripción} \\
+\hline
+\endhead
+
+    ACCDFISA &
+    Anti Cyber Crime Department of Federal Internet Security Agency &
+    Cifra archivos y bloquea la pantalla, después los atacantes solicitan el pago a través de Moneypak, Paysafe o Ukash. Está empaquetado como un archivo autoextraíble (\gls{SFX}) y puede venir incluido con aplicaciones de terceros como WinRAR \cite{129}.\\
+\hline
+    ANDROIDOS\_LOCKER & 
+    Androidos\_Locker &
+    Fue el primer ransomware para móviles detectado. Utiliza \gls{TOR}, un servicio que permite conexiones a servidor anónimas.\\
+\hline
+    CRIBIT & 
+    BitCrypt &  
+    Cifra los archivos de la víctima mediante el cifrado \gls{RSA}-AES. Existen dos tipos, el 1 y el 2. El tipo 1 usa cifrado \gls{RSA}-426 y el tipo 2 \gls{RSA}-1024. Agrega la cadena bitcryp1 o bitcryp2, dependiendo del tipo, al nombre de la extensión de los archivos que cifra.\\
+\hline
+     
+    CRILOCK & 
+    CryptoLocker &  
+    Cifra ciertos tipos de archivos usando una clave pública \gls{RSA} y guarda la clave privada en los servidores \gls{CyC}. Para conectarse con el servidor \gls{CyC}, emplea el \gls{DGA}. En octubre de 2013 se descubrió que este ransomware es descargado por paquetes de malware troyanos como ZBOT que son enviados a través de correos electrónicos. \cite{10}\\
+\hline
+    WANNACRYPT & 
+    WannaCry &  
+    Gusano criptográfico que explotaba la vulnerabilidad de Windows conocida como MS17-010. Se propagó a través de la red, infectando todo tipo de dispositivos y convirtiéndose en el ransomware más agresivo de 2017 \cite{61}.\\
+\hline
+     
+    CRYPAURA & 
+    PayCrypt &  
+    Cifra archivos y agrega la dirección de correo electrónico de contacto para el descifrado como extensión de los archivos. Cada usuario tiene un correo distinto, siguiendo este formato: {nombre del archivo}.id-{ID de víctima}-paycrypt@aol.com.'\\
+\hline
+    CRYPCTB & 
+    Critroni, CTB Locker, Curve-Tor-Bitcoin Locker &  
+    Cifra los archivos y se asegura de que no haya recuperación posible de ellos al eliminar sus instantáneas (en inglés \textit{shadow copies}). El usuario recibe un correo no deseado con un archivo adjunto, que en realidad es un programa que descarga de este ransomware. Utiliza \gls{TOR} para ocultar sus comunicaciones con el servidor \gls{CyC}.\\
+\hline
+     
+    CRYPWEB &
+    PHP ransomware &
+    Ataca a servidores web, cifrando sus bases de datos. Utiliza \gls{HTTPS} para comunicarse con el servidor \gls{CyC}.\\
+\hline
+    CRYPTFILE & 
+    Cryptfile &  
+    Utiliza una clave pública única generada (\gls{RSA}-2048) para el cifrado de archivos. Pide a los usuarios que paguen 1 \textit{bitcoin} para obtener una clave privada que se usa para descifrar los archivos.\\
+\hline
+    
+    CRYPWALL & 
+    CryptoWall, CryptWall, CryptoWall 3.0, Cryptowall 4.0 &  
+    Es la versión actualizada de CryptoDefense. Utiliza la red \gls{TOR} con fines de anonimato y llega por correo no deseado, siguiendo la cadena de infección UPATRE-ZBOT-RANSOM. CryptoWall 3.0 contiene un software espía FAREIT. Cryptowall 4.0 también cifra el nombre de archivo y llega al usuario a través de spam como un archivo adjunto de JavaScript, y puede ser descargado por variantes de TROJ\_KASIDET. \cite{11}\\
+\hline
+    CRYPTOR & 
+    Batch file ransomware &  
+    Ransomware de archivos por lotes \textit{(batch file)} capaz de cifrar los archivos del usuario mediante la aplicación GNU Privacy Guard.\\
+\hline
+     
+    CRYPTOSHIELD &
+    CryptoShield &
+    Cifra los archivos mediante el cifrado \gls{RSA}-2048 y muestra un error falso de la aplicación Explorer.exe. Se distribuye a través del \textit{exploit kit} RIG. \cite{12}\\
+\hline
+    PGPCODER & 
+    Pgpcoder &
+    Fue descubierto en 2005. Crea dos claves de registro, una para asegurarse de que el ransomware continua su ejecución aun habiendo reiniciado el ordenador y otra para contar el número de archivos infectados. Cuando termina de cifrar todos los archivos que encuentra, le facilita al usuario un correo para que pague \$100–200 por el rescate.\\
+\hline
+     
+    CRYSIS &
+    Crysis &
+    Ransomware de tipo Filecoder que utiliza los cifrados \gls{RSA} y \gls{AES} con llaves de cifrado largas. Esto hace prácticamente imposible la recuperación de los archivos cifrados. \cite{13}\\
+\hline
+    KOVTER & 
+    Kovter &
+    Este ransomware se activa mediante una macro de un documento Word enviado al usuario a través de un correo electrónico. Si se habilitan las macros en el documento, se descargará un archivo que crea un comando de \textit{PowerShell} y lo almacena en el registro para que sea persistente. Posteriormente, este archivo se elimina para que no quede rastro. \cite{14}\\
+\hline
+     
+    MATSNU &
+    Matsnu &
+    Es un \textit{backdoor} (un tipo de troyano que permite el acceso al sistema infectado y su control remoto) que puede bloquear el ordenador y pedir un rescate para su desbloqueo. \cite{15}\\
+\hline
+    REVETON & 
+    Police Ransom &
+    Ransomware de tipo Virus de la policía, explicado en la sección anterior. Bloquea el sistema y se hace pasar por una advertencia de la policía, exigiendo que el usuario pague una multa por un delito falso.\\
+\hline
+     
+    VBUZKY &
+    Vbuzky &
+    Utiliza la inyección Shell\_TrayWnd y habilita la opción TESTSIGNING de Windows 7.\\
+\hline
+    CRYPTLOCK & 
+    TorrentLocker &
+    Se hace pasar por CryptoLocker, mostrándose al usuario como 'crypt0l0cker'. Utiliza un cifrado AES para cifrar los archivos y un cifrado asimétrico \gls{RSA} para cifrar la clave AES. \cite{16}\\
+\hline
+     
+    CRYPDIRT &
+    Dirty Decrypt &
+    Bloquea el ordenador del usuario y crea una clave en el registro del sistema llamada 'DirtyDecrypt' con el valor 'DirtyDecrypt.exe'. Pide \$100 para desbloquear el ordenador.\\
+\hline
+    CRYPTESLA & 
+    TeslaCrypt &
+    La pantalla que se muestra al usuario es similar a la de CryptoLocker. Cifra archivos relacionados con juegos: perfiles, partidas guardadas, etc. Este ransomware no cifra archivos con un tamaño superior a 268 MB. Las versiones 2.1 y 2.2 añaden a los archivos cifrados las extensiones .vvv y .ccc. La versión 3.0 tiene un algoritmo de cifrado mejorado y agrega .xxx, .ttt y .mp3 a los archivos que cifra. \cite{17}\\
+\hline
+     
+    CRYPVAULT &
+    VaultCrypt &
+    Utiliza la herramienta de cifrado GNU Privacy Guard. Descarga de herramientas para robar credenciales almacenadas en navegadores web y utiliza sDelete 16 veces para prevenir la recuperación de archivos.\\
+\hline
+    CRYPSHED & 
+    Troldesh &
+    Fue visto por primera vez en Rusia. Además de agregar la extensión .xtbl a los archivos cifrados, también codifica sus nombres, lo que hace que los usuarios no sepan que archivos han sido afectados.\\
+\hline
+     
+    SYNOLOCK &
+    SynoLocker &
+    Aprovecha el sistema operativo de los dispositivos Synology \gls{NAS} (\gls{DSM} 4.3-3810 o anterior) para cifrar sus archivos.\\
+\hline
+    KRYPTOVOR & 
+    CryptInfinite, DecryptorMax &
+    Utiliza una biblioteca Delphi llamada LockBox 3 para cifrar archivos.\\
+\hline
+     
+    CRYPFIRAGO &
+    Crypfirago &
+    Cifra archivos y les agrega las extensiones .1999 o .bleep. Utiliza Bitmessage para comunicarse con los delincuentes.\\
+\hline
+    CRYPRADAM & 
+    Radamant &
+    Agrega .rpm a los archivos que cifra. Se difunde mediante correos no deseados al abrir los documentos PDF o Word adjuntos a estos. \cite{18}\\
+\hline
+     
+    CRYPTRITU &
+    Ransom32 &
+    Fue el primer ransomware desarrollado en JavaScript y afecta a todos los sistemas operativos por igual. \cite{19}\\
+\hline
+    CRYPBOSS & 
+    CrypBoss &
+    Llega al usuario como correo no deseado. Añade .crypt a los archivos cifrados y usa el cifrado \gls{AES}. También elimina las \textit{Shadow Volume Copies}, conocidas como instantáneas, que sirven para restaurar el sistema a un punto anterior. \cite{20}\\
+\hline
+     
+    LOCKY &
+    Locky &
+    Cambia el nombre de los archivos cifrados a valores hexadecimales y les agrega la extensión .locky. Se distribuye a través de correo no deseado con un documento adjunto integrado en una macro.\\ 
+\hline
+    CRYPHYDRA & 
+    HydraCrypt &
+    Distribuido mediante el \textit{Angler exploit kit}, un programa que se aprovecha de las vulnerabilidades en el lado del cliente (Java, Flash, PDFs, etc). Amenaza al usuario con vender sus archivos en la Dark Web si no paga el rescate. \cite{21}\\
+\hline
+     
+    CERBER &
+    Cerber &
+    Cifra los archivo, cambiándoles el nombre y añadiéndoles la extensión .cerber. Se distribuye mediante correos no deseados o mediante la descarga de archivos infectados en páginas web. Contiene archivos de audio para hablar con la víctima, además de instrucciones para pagar el rescate. \cite{22}\\
+\hline
+    JIGSAW & 
+    Jigsaw &
+    Ransomware de tipo Wiper que elimina los archivos del ordenador infectado y aumenta la cantidad a pagar por el rescate cada hora. Algunas variantes tienen soporte de chat en vivo para hablar sus víctimas.\\
+\hline
+     
+    PETYA &
+    Petya &
+    Cifra archivos y puede bloquea el disco duro entero, impidiendo que el equipo arranque y provocando una pantalla azul. Al reiniciar el sistema, se muestra un mensaje informando al usuario de la situación y del rescate. \cite{23}\\
+\hline
+    WALTRIX & 
+    CRYPTXXX, WALTRIX, Exxroute &
+    Como HydraCrypt, es distribuido mediante el \textit{Angler exploit kit} como un fichero \gls{DLL}. Bloquea el sistema y cifra todos los archivos, añadiéndoles la extensión .crypt.\\
+\hline
+     
+    JSRAA & 
+    RAA &
+    Escrito en JScript y diseñado para el motor \textit{Windows Scripting Host} en Internet Explorer. No se ejecuta en el navegador Microsoft Edge.\\
+\hline
+    RYUK & 
+    Ryuk &
+    Este ransomware está especializado en atacar empresas, y es especialmente peligroso ya que puede distribuirse por una red \gls{LAN} privada sin importar que los ordenadores estén apagados. Esto lo consigue enviando paquetes WoL (Wake-on-LAN). Cifra los archivos del sistema y usa una clave pública \gls{RSA}, además de eliminar las copias de seguridad del sistema. En la nota que deja el ransomware, no viene la cantidad a pagar sino una dirección de correo electrónico y una billetera de \textit{bitcoin}. La víctima tiene que ponerse en contacto con los atacantes para negociar el rescate y este varía dependiendo de la empresa afectada. \cite{24}\\
+\hline
+     
+    MAZE & 
+    Maze &
+    Al igual que Ryuk, es un ransomware que se dedica a atacar empresas. Cifra los archivos y amenaza con publicarlos y venderlos si la empresa no paga el rescate. Este ransomware se distribuye mediante correos no deseados con archivos adjuntos infectados o a través de kits de exploits (Fallout EK y Spelevo EK). \cite{25}\\
+\hline
+    SAMSAM & 
+    SamSam &
+    Los ataques de este ransomware son manuales, por lo que los objetivos suelen ser empresas para ganar más dinero. Estos ataques se ejecutan en remoto, explotando vulnerabilidades en \gls{RDP}, servidores \gls{FTP} y servidores Java para obtener acceso a la red de la víctima. Cifra los archivos del sistema usando \gls{RSA}-2048 y pide un rescate en \textit{bitcoins}. \cite{26}\\
+\hline
+    
+    BADRABBIT & 
+    Bad Rabbit &
+    Es un ejemplo de ransomware de tipo 'dropper' que se mencionó anteriormente. Se disfraza como una instalación de Adobe Flash y se propaga a través de descargas automáticas en sitios web vulnerados. Bloque el ordenador y pide un rescate de \$280 en \textit{bitcoins} con un plazo de 40 horas. \cite{27}\\
+\hline
+    GANDCRAB & 
+    GandCrab &
+    Distribuido por la \textit{DarkNet} siguiendo el modelo \gls{RaaS}, este ransomware cifra los archivos del sistema y pide un rescate en \textit{Dash} (una criptomoneda como \textit{bitcoin}). \cite{28}\\
+\hline
+\end{longtable}}

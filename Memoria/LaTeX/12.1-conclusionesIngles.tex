@@ -1,0 +1,39 @@
+\section{Conclusions}
+\noindent Ransomware attacks are becoming more and more common everyday and, consequently, more companies and organizations suffer them, in particular \gls{SME}. These constitute a key pillar for the European economy and their resources destined to the prevention of cyber-attacks are more limited. Therefore, there is a need to develop an easy to use open source ML model able to protect these kinds of companies effectively. The model input data consists of the Windows \gls{API} calls made by the executable samples. After carrying out this work, the following conclusions have been obtained:
+
+\begin{itemize}
+    \item In malware detection field, the use of \gls{ML} is essential to obtain optimal results, so we decided to create a \gls{ML} model.
+    
+    \item In related work on malware and ransomware analysis and detection, the algorithms used in \gls{ML} models are supervised learning algorithms.
+    
+    \item Windows \gls{API} calls are a reliable attribute to analyze and detect ransomware, as a large number of projects use them as main features to build their models.
+    
+    \item Using the number of calls to each of the \gls{API}s to build a dataset provides better results than considering only their appearance with a binary representation. This is evidenced on the experiments, where two datasets are used, \textit{dataset suma} and \textit{dataset binario}, being \textit{dataset suma} the one that obtains an improvement of around 10\% in the results.
+    
+    \item Sandboxing is a very reliable technique to run and analyze samples in a safe environment. Therefore, a malware analysis lab is built to examine these sample types, since they suppose a great risk to computers. To analyze the samples, we use a tool called Cuckoo Sandbox, which offers a multitude of settings to collect specific sample characteristics.
+    
+    \item Most related works on ransomware detection use relatively small datasets, compared to the number of samples used for \gls{ML} at large. Therefore, in this work we have used a first dataset with a similar extension to those of the other works, obtaining a precision of 87\%, and a second dataset, considerably bigger, which obtains a precision of 98\%. This concludes that the proposed system obtains better results with a larger dataset than the other works using less data.
+    
+    \item In the experimentation, 7 \gls{ML} algorithms have been used and \gls{RF} has been the one that offers the best results when detecting ransomware samples, being better than other algorithms such as \gls{DT}, \gls{SVM} or \gls{NB}.
+
+\end{itemize}
+
+
+\section{Future Work}
+\noindent The possible research and development lines in the future are the following:
+
+\begin{itemize}
+    \item Implementation of a client-server model including a consumer \gls{API} or a graphical interface to make the use of the model easier. In this way, based on the \gls{ML} model built, it would be possible to analyze files to detect the potential presence of ransomware.
+    
+    \item Include a signature-based system for ransomware detection, storing these signatures in a database accessed to compare the new samples analyzed signatures.
+    
+    \item Implement early detection of ransomware, finding its presence ahead of its execution.
+    
+    \item After the dataset preparation and cleaning, the number of final samples has been reduced, so it is convenient to continue expanding the dataset with samples from other sources, increasing the system's reliability.
+
+    \item Consider other perspectives to improve ransomware detection. Among the possible options are analyzing network connections made by the sample, entropy of the system, monitoring the file system or \gls{HPC} observation, as seen in other related works in 
+    Chapter \ref{Capitulo4}
+
+    \item Consider malware samples and not just ransomware ones, creating a model with more application possibilities.
+    
+\end{itemize}

@@ -1,0 +1,745 @@
+\documentclass[11pt,a4paper]{book}
+\pdfinclusioncopyfonts=1
+\usepackage{lmodern}
+\usepackage[nottoc]{tocbibind}
+\usepackage{morewrites}
+\usepackage{color,soul}
+\usepackage{mwe}
+\usepackage{hhline}
+%\usepackage{algorithm}
+\usepackage[svgnames]{xcolor}	
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{emptypage}
+\usepackage{float}
+
+\usepackage{color}
+\definecolor{gray90}{gray}{.90}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\usepackage{listings}
+\lstset{ frame=Ltb,
+framerule=0pt,
+aboveskip=0.5cm,
+framextopmargin=3pt,
+framexbottommargin=3pt,
+framexleftmargin=0.4cm,
+framesep=0pt,
+rulesep=.4pt,
+backgroundcolor=\color{gray90},
+rulesepcolor=\color{black},
+%
+stringstyle=\ttfamily,
+showstringspaces = false,
+basicstyle=\small\ttfamily,
+commentstyle=\color{gray45},
+keywordstyle=\bfseries,
+%
+numbers=left,
+numbersep=15pt,
+numberstyle=\tiny,
+numberfirstline = false,
+breaklines=true,
+}
+
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{consola}
+{basicstyle=\scriptsize\bf\ttfamily,
+backgroundcolor=\color{gray90},
+}
+
+\lstdefinestyle{C}
+{language=C,
+}
+
+% PAQUETES PARA MOSTRAR EL .CONFIG
+\usepackage{listings}
+\usepackage{xcolor}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{Mycolor1}{green!10!orange!90!}
+\colorlet{numb}{magenta!60!black}
+
+
+\lstdefinelanguage{config}{
+    comment=[l]{//},
+    commentstyle=\color{gray},
+    string=[s]{"}{"},
+    stringstyle=\color{blue},
+    emph={SIGMOID, true, false},
+    emphstyle={\color{Green}},
+    basicstyle=\scriptsize,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1}
+      {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+      {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+      {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+      {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+      {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+      {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+      {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+      {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+      {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+      {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+      {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+      {€}{{\EUR}}1 {£}{{\pounds}}1,
+}
+
+
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{preview}
+\usepackage{datatool}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage{eqnarray}
+\usepackage{preview}
+\usepackage{datatool}
+\usepackage{setspace}
+\usepackage{caption}
+
+\usepackage{latexsym}	
+%\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}%\usepackage[reqno]{amsmath}
+\usepackage{rotating}
+\usepackage{url}
+%\usepackage{breakurl}
+\usepackage{proof}
+\usepackage{alltt}
+\usepackage{multirow}
+\usepackage{multibib}
+\newcites{rec}{Bibliograf\'ia}
+\usepackage{colortbl}
+\usepackage[none]{hyphenat}
+
+%\usepackage{indentfirst}
+
+\usepackage{enumerate}
+%\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=black, citecolor=black, urlcolor=black]{hyperref} %descomentar en la version de imprimir
+
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref} %comentar en la version de imprimir
+\usepackage{verbatim}
+\usepackage{amssymb}
+%\usepackage{etex}
+%\usepackage{hetcasl}
+%\usepackage{algorithm}
+%\usepackage{algorithm2e}
+\usepackage{pdflscape}
+\usepackage{lscape}
+\usepackage{longtable}
+%\usepackage{tocbibind}
+\usepackage{booktabs}
+%\usepackage{auto-pst-pdf}
+\usepackage{graphicx}
+\usepackage{psfrag}
+%\usepackage{xypic}
+\usepackage{pst-all}
+\usepackage{comment}
+\usepackage{indentfirst}
+\usepackage[a4paper]{geometry}
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{subfigure}
+\usepackage[nopostdot,nonumberlist,shortcuts,acronym,toc]{glossaries}
+
+\input{hyphenation}
+
+\makenoidxglossaries
+
+\usepackage[vlined]{algorithm2e}%\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{appendix}
+\usepackage{dashrule}
+\usepackage{verbatim} % comentarios
+ %\usepackage{soulpos} 
+%\usepackage[author={Ana}]{pdfcomment}
+\makenoidxglossaries
+%\RequirePackage{etex}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,fill=blue!20,draw,inner sep=1pt] (char) {#1};}}
+%\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+
+
+\geometry{a4paper}
+\geometry{top=3cm,bottom=3cm,left=3cm,right=3cm,headsep=1cm}
+%\renewcommand{\baselinestretch}{1.25}
+%\setlength{\parskip}{\baselineskip}
+
+%\setlength{\belowcaptionskip}{10pt}
+
+%\renewcommand{\tablename}{Tabla}
+
+%\renewcommand{\acronymname}{Lista de Acr\'onimos}
+%\addto\captionsspanish{
+%\renewcommand*{\acronymname}{Lista de Acr\'onimos}}%
+%Class Figures 
+
+
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+
+
+\newcommand{\newimage}[4] {
+\begin{figure}[tbh!]
+   \centering
+\begin{center}
+    \includegraphics[width=#1]{images/#2.jpg}
+\end{center}
+  \caption{#3}
+  \label{fig:#4}
+\end{figure}
+}
+
+\newcommand{\newimageRep}[3] {
+\begin{figure}[tbh!]
+   \centering
+\begin{center}
+    \includegraphics[width=#1]{images/#2.jpg}
+\end{center}
+  \caption{#3}
+  \label{figRep:#2}
+\end{figure}
+}
+
+
+\newcommand{\newimageH}[3] {
+\begin{figure}[H]
+   \centering
+\begin{center}
+    \includegraphics[width=#1]{images/#2.jpg}
+\end{center}
+  \caption{#3}
+  \label{fig:#2}
+\end{figure}
+}
+
+\newcommand{\newimagep}[3] {
+\begin{figure}[hbt!]
+   \centering
+\begin{center}
+    \includegraphics[width=#1]{images/#2.pdf}
+\end{center}
+  \caption{#3}
+  \label{fig:#2}
+\end{figure}
+}
+
+\newcommand{\newimagec}[3] {
+\begin{figure*}[hbt!]
+   \centering	
+\begin{center}
+    \includegraphics[width=#1]{images/#2.pdf}
+\end{center}
+  \caption{#3}
+  \label{fig:#2}
+\end{figure*}
+}
+
+\newcommand{\link}[1] {
+  \ref{fig:#1}
+}
+
+% Punto decimal spanish
+\makeatletter
+\def\es@decimal{{.}}
+\makeatother
+
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+\renewcommand{\labelitemi}{\leavevmode\hbox to 1.2ex
+      {\hss\vrule height .9ex width .7ex depth -.2ex\hss}}
+\pagestyle{fancy}
+  \renewcommand{\headrulewidth}{0pt}
+
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\fancyhf{}
+\fancyhead[LO]{\textsc{\rightmark}}
+\fancyhead[RE]{\textsc{\leftmark}}
+\fancyhead[RO,LE]{\thepage}
+
+\fancyfoot[LE,RO]{}
+\fancypagestyle{plain}{%
+  \fancyhf{}  
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\newcommand{\rewrites}{\Rightarrow}
+
+
+% To add the pdfs
+\newcommand{\inPdf}[1]{\includepdf[height=\textheight,pages={1-last},frame=true,fitpaper=false,pagecommand={\thispagestyle{fancy}}]{pubs/#1}}
+
+\newtheorem{algor}{Algoritmo}[section]
+\renewcommand{\tablename}{Tabla} 
+\newtheorem{proposicion}{Proposici\'on}[section]
+\newtheorem{propiedad}{Propiedad}[section]
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{definicion}{Definici\'on}[section]
+\newtheorem{coro}{Corolario}[section]
+\newtheorem{lema}{Lema}[section]
+\newtheorem{ej}{Ejemplo}[section]
+\newtheorem{hecho}{Hecho}[section]
+\newtheorem{algsp}{Algoritmo}[section]
+\newtheorem{observacion}{Observaci\'on}[section]
+\newenvironment{prueba}{\par\addvspace{\bigskipamount}%
+\noindent\textit{Demostraci\'on.}\ }{\qed\par\addvspace{\bigskipamount}}
+\newcommand{\ingles}[1]{\emph{#1} en ingl\'es}
+\newcommand{\pfsp}{{\bf Demostraci\'on: }}
+
+\renewcommand{\arraystretch}{1.5}
+
+\graphicspath{{images/}}
+\setlength{\headheight}{26pt}
+
+ \newtheorem{prop}{Proposition}[section]
+ \newtheorem{theo}{Theorem}[section]
+ \newtheorem{lemma}{Lemma}[section]
+ \newtheorem{constr}{Construction}[section]
+ \newtheorem{defin}{Definition}[section]
+ \newtheorem{ex}{Example}[section]
+ \newtheorem{alg}{Algorithm}[section]
+ \newtheorem{cor}{Corollary}[section]
+ \newtheorem{prob}{}[section]
+ \newtheorem{pro}{Problem}[section]
+ \newtheorem{remark}{Remark}[section]
+
+ \newtheorem{COROLLARY}{\indent Corollary}
+
+\newenvironment{corollary}[1]
+{\begin{COROLLARY}\fullstop\label{#1}\sl}{\rm\end{COROLLARY}}
+\newtheorem{EXAMPLE}{\indent Example}
+\newenvironment{example}[1]
+{\begin{EXAMPLE}\fullstop\label{#1}\rm}{\rm\end{EXAMPLE}}
+\newtheorem{THEOREM}{\indent Theorem}
+\newenvironment{theorem}[1]
+{\begin{THEOREM}\fullstop\label{#1}\sl}{\rm\end{THEOREM}}
+\newtheorem{REMARK}{\indent Remark}
+%\newenvironment{remark}[1]
+%{\begin{REMARK}\fullstop\label{#1}\rm}{\rm\end{REMARK}}
+
+\newcommand{\bldu}{{\bf u}}
+\newcommand{\bldv}{{\bf v}}
+
+\newcommand{\Eq}[1]{(\ref{#1})}
+\newcommand{\qed}{\hfill$\Box$\vspace{.5cm}}
+%\newcommand{\qed}{\hfill$\blacksquare$\\[1ex]}
+\newcommand{\pr}{\vspace{.8cm} {\bf Problems}}
+\newcommand{\sol}{\vspace{.8cm} {\bf Solutions}}
+\newcommand{\pf}{{\bf Proof: }}
+\newcommand{\al}{\mbox{$\alpha$}}
+\newcommand{\be}{\mbox{$\beta$}}
+\newcommand{\ga}{\mbox{$\gamma$}}
+\newcommand{\si}{\mbox{$\sigma$}}
+\newcommand{\eq}{\mbox{$\, =\,$}}
+\newcommand{\om}{\mbox{$\omega$}}
+%\newcommand{\eq}{\mbox{$\,=\,$}}
+\newcommand{\ur}{\mbox{$\underline{r}$}}
+\newcommand{\uf}{\mbox{$\underline{f}$}}
+\newcommand{\ua}{\mbox{$\underline{a}$}}
+\newcommand{\ub}{\mbox{$\underline{b}$}}
+\newcommand{\uh}{\mbox{$\underline{h}$}}
+\newcommand{\uv}{\mbox{$\underline{v}$}}
+\newcommand{\ue}{\mbox{$\underline{e}$}}
+\newcommand{\deff}{\stackrel{\Delta}{=}}
+\newcommand{\us}{\mbox{$\underline{s}$}}
+\newcommand{\uu}{\mbox{$\underline{u}$}}
+\newcommand{\uy}{\mbox{$\underline{y}$}}
+\newcommand{\uc}{\mbox{$\underline{c}$}}
+\newcommand{\ud}{\mbox{$\underline{d}$}}
+\newcommand{\ut}{\mbox{$\underline{t}$}}
+\newcommand{\uw}{\mbox{$\underline{w}$}}
+\newcommand{\uell}{\mbox{$\underline{\ell}$}}
+
+\newcommand{\up}{\mbox{$\underline{p}$}}
+\newcommand{\uq}{\mbox{$\underline{q}$}}
+\newcommand{\ug}{\mbox{$\underline{g}$}}
+
+
+\newcommand{\um}{\mbox{$\underline{m}$}}
+
+\newcommand{\hX}{\mbox{$\hat{X}$}}
+\newcommand{\hY}{\mbox{$\hat{Y}$}}
+\newcommand{\hZ}{\mbox{$\hat{Z}$}}
+\newcommand{\hs}{\mbox{$\hat{s}$}}
+\newcommand{\hS}{\mbox{$\hat{S}$}}
+\newcommand{\bhS}{\mbox{$\bf \hS$}}
+\newcommand{\hC}{\mbox{$\hat{C}$}}
+%\newcommand{\mod}{\mbox{${\rm mod}$}}
+\newcommand{\hR}{\mbox{$\hat{R}$}}
+\newcommand{\hr}{\mbox{$\hat{r}$}}
+\newcommand{\0}{\mbox{$\underline{0}$}}
+\newcommand{\uzero}{\mbox{$\underline{0}$}}
+\newcommand{\uone}{\mbox{$\underline{1}$}}
+\newcommand{\lcm}{\mbox{${\rm lcm}$}}
+\newcommand{\rec}{\mbox{${\rm rec}$}}
+\newcommand{\SDA}{\mbox{${\rm SDA}$}}
+\newcommand{\user}{\mbox{${\rm user}$}}
+\newcommand{\msg}{\mbox{${\rm msg}$}}
+\newcommand{\Nrounds}{\mbox{${\rm Nrounds}$}}
+
+\newcommand{\Raou}{\mbox{$\overrightarrow{u}$}}
+\newcommand{\Raov}{\mbox{$\overrightarrow{v}$}}
+
+
+\newcommand{\hU}{\mbox{${\hat{U}}$}}
+\newcommand{\hV}{\mbox{${\hat{V}}$}}
+\newcommand{\hW}{\mbox{${\hat{W}}$}}
+\newcommand{\hA}{\mbox{${\hat{A}}$}}
+\newcommand{\s}{\mbox{${\cal S}$}}
+\newcommand{\A}{\mbox{${\cal A}$}}
+\newcommand{\EO}{\mbox{${\cal EO}$}}
+%\newcommand{\1}{\mbox{$\underline{1}$}}
+\newcommand{\ra}{\mbox{$\rightarrow$}}
+\newcommand{\ontopof}[2]{{{\scriptstyle{#1}} \atop {\scriptstyle{#2}}}}
+\newcommand{\Ra}{\mbox{$\Rightarrow$}}
+\newcommand{\la}{\mbox{$\leftarrow$}}
+\newcommand{\La}{\mbox{$\Leftarrow$}}
+\newcommand{\lra}{\mbox{$\leftrightarrow$}}
+\newcommand{\lam}{\mbox{$\lambda$}}
+\newcommand{\lan}{\mbox{$\langle$}}
+\newcommand{\ran}{\mbox{$\rangle$}}
+\newcommand{\lf}{\mbox{$\lfloor$}}
+\newcommand{\rf}{\mbox{$\rfloor$}}
+\newcommand{\lc}{\mbox{$\lceil$}}
+\newcommand{\rc}{\mbox{$\rceil$}}
+%\newcommand{\lp}{\mbox{$\left( $}}
+\newcommand{\lp}{\par\noindent}
+%\newcommand{\rp}{\mbox{$\right) $}}
+\newcommand{\ap}{\mbox{$\approx$}}
+\newcommand{\xor}{\mbox{$\oplus$}}
+\newcommand{\C}{\mbox{${\cal C}$}}
+\newcommand{\B}{\mbox{${\cal B}$}}
+%\newcommand{\th}{\mbox{${\tilde{h}}$}}
+\newcommand{\G}{\mbox{${\cal G}$}}
+\newcommand{\E}{\mbox{${\cal E}$}}
+%\newcommand{\cR}{\mbox{${\cal R}$}}
+\newcommand{\R}{\mbox{${\cal R}$}}
+\newcommand{\cC}{\mbox{${\cal C}$}}
+\newcommand{\cO}{\mbox{${\cal O}$}}
+\newcommand{\bS}{\mbox{${\bf S}$}}
+\newcommand{\I}{\mbox{${\cal I}$}}
+\newcommand{\rg}{\mbox{$\overrightarrow{g}$}}
+\newcommand{\lag}{\mbox{$\overleftarrow{g}$}}
+\newcommand{\dummy}{\mbox{$\,$}}
+\newcommand{\bp}{\newpage}
+\newcommand{\br}{\\ }
+\newcommand{\ce}{\begin{center}}
+\newcommand{\cen}{\end{center}}
+\newcommand{\fB}{\bf}
+\newcommand{\fI}{\it}
+\newcommand{\fR}{\rm}
+%\newcommand{\hl}{\dummy\hrulefill\dummy}
+\newcommand{\ip}[1]{\item[{\rm {#1}}]}
+\newcommand{\ipb}{\begin{description}}
+\newcommand{\ipn}{\end{description}}
+%\begin{comment}
+\newcommand{\bld}[1]{{\bf {#1}}}
+\newcommand{\itl}[1]{{\it {#1}}}
+\newcommand{\rmn}[1]{{\rm {#1}}}
+\newcommand{\pp}{\par}
+\newcommand{\qb}{\begin{quote}}
+\newcommand{\qn}{\end{quote}}
+\newcommand{\sh}[2]{\section{\Pd #1}\label{#2}}
+\newcommand{\spc}[1]{\vspace{#1}}
+\newcommand{\tp}{\begin{titlepage}}
+\newcommand{\tpn}{\end{titlepage}}
+\newcommand{\zb}{\begin{figure}[hbtp]}
+\newcommand{\zn}{\end{figure}}
+\newcommand{\EQ}{\[}
+\newcommand{\EN}{\]}
+\newcommand{\EQX}[1]{\begin{equation}\label{#1}}
+\newcommand{\ENX}{\end{equation}}
+\newcommand{\EQL}{\begin{eqnarray*}}
+\newcommand{\ENL}{\end{eqnarray*}}
+\newcommand{\EQLX}[1]{\begin{eqnarray}\label{#1}}
+\newcommand{\ENLX}{\end{eqnarray}}
+\newcommand{\Pd}{\hspace{-1.35em}
+           {\bf .} \hspace {0.35em}}
+\newcommand{\lpsh}{\nopagebreak\par\noindent\nopagebreak}
+\newcommand{\ppsh}{\nopagebreak\par\nopagebreak}
+\newcommand{\open}{\begin{document}}
+\newcommand{\close}{\end{document}}
+\newcommand{\lfcr}[1]{\br\hspace*{#1em}}
+\newenvironment{mat}[1]
+{\left[\begin{array}{#1}}{\end{array}\right]}
+\newcommand{\GAMMA}{\Gamma}
+\newcommand{\DELTA}{\Delta}
+\newcommand{\THETA}{\Theta}
+\newcommand{\LAMBDA}{\Lambda}
+\newcommand{\XI}{\Xi}
+\newcommand{\PI}{\Pi}
+\newcommand{\SIGMA}{\Sigma}
+\newcommand{\UPSILON}{\Upsilon}
+\newcommand{\PHI}{\Phi}
+\newcommand{\PSI}{\Psi}
+\newcommand{\OMEGA}{\Omega}
+\newcommand{\bldgreek}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\bldbeta}{\bldgreek{\beta}}
+\newcommand{\bldgamma}{\bldgreek{\gamma}}
+\newcommand{\blddelta}{\bldgreek{\delta}}
+\newcommand{\bldepsilon}{\bldgreek{\epsilon}}
+\newcommand{\bldvarepsilon}{\bldgreek{\varepsilon}}
+\newcommand{\bldzeta}{\bldgreek{\zeta}}
+\newcommand{\bldeta}{\bldgreek{\eta}}
+\newcommand{\bldtheta}{\bldgreek{\theta}}
+\newcommand{\bldvartheta}{\bldgreek{\vartheta}}
+\newcommand{\bldiota}{\bldgreek{\iota}}
+\newcommand{\bldkappa}{\bldgreek{\kappa}}
+\newcommand{\bldlambda}{\bldgreek{\lambda}}
+\newcommand{\bldmu}{\bldgreek{\mu}}
+\newcommand{\bldnu}{\bldgreek{\nu}}
+\newcommand{\bldxi}{\bldgreek{\xi}}
+\newcommand{\bldpi}{\bldgreek{\pi}}
+\newcommand{\bldvarpi}{\bldgreek{\varpi}}
+\newcommand{\bldrho}{\bldgreek{\rho}}
+\newcommand{\bldvarrho}{\bldgreek{\varrho}}
+\newcommand{\bldsigma}{\bldgreek{\sigma}}
+\newcommand{\bldvarsigma}{\bldgreek{\varsigma}}
+\newcommand{\bldtau}{\bldgreek{\tau}}
+\newcommand{\bldupsilon}{\bldgreek{\upsilon}}
+\newcommand{\bldphi}{\bldgreek{\phi}}
+\newcommand{\bldvarphi}{\bldgreek{\varphi}}
+\newcommand{\bldchi}{\bldgreek{\chi}}
+\newcommand{\bldpsi}{\bldgreek{\psi}}
+\newcommand{\bldomega}{\bldgreek{\omega}}
+%\newcommand{\qed}{\hfill$\blacksquare$\\[1ex]}
+
+
+ \def\mcd{\mathop{\rm mcd}\nolimits} 
+\def\mcm{\mathop{\rm mcm}\nolimits} 
+
+
+\newcommand{\ux}{\mbox{${\underline{x}}$}}
+%\newcommand{\r}{\mbox{$\rho$}}
+\newcommand{\bldc}{\mbox{${\bf c}$}}
+\newcommand{\bldy}{\mbox{${\bf y}$}}
+\newcommand{\bldalpha}{\mbox{\boldmath $\alpha$}}
+\newcommand{\clauseend}{\hspace*{\fill}\mbox{$\bullet$}}
+\newcommand{\fullstop}{\hspace{-0.85em} {\bf .}}
+%\end{comment}
+
+\newenvironment{changemargin}[1]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\topmargin}{#1}
+%\setlength{\leftmargin}{#1}
+%\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}} 
+\usepackage{enumitem}
+
+\DeclareMathOperator*{\median}{median}
+
+%\begin{comment}
+\addto\captionsspanish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}{\'Indice General}
+	\renewcommand{\listtablename}{\'Indice de Tablas} 
+	\renewcommand{\listfigurename}{\'Indice de Figuras} 
+}
+
+\renewcommand{\acronymname}{Lista de Acr\'onimos}
+\renewcommand{\listalgorithmcfname}{\'Indice de Algoritmos}
+\renewcommand{\algorithmcfname}{Algoritmo}
+%\end{comment}
+
+\newcommand{\listofalgorithmes}{\tocfile{\listalgorithmcfname}{loa}}
+
+\usepackage{xargs}                      
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\addInfo}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[inline,linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+
+\newcommand{\redspace}{\vspace{-5mm}} %command for reducing space in the text and images or tables
+
+%%% preambulo do documento
+\pdfoptionpdfminorversion=6
+%\selectlanguage{english}
+\input{03-acronimos}
+
+\renewcommand{\appendixname}{Anexos}
+
+\begin{document}
+\sloppy
+\frontmatter
+
+\begin{frontmatter}
+
+\input{01-portada}
+\input{blanco}
+
+
+\renewcommand{\baselinestretch}{1.15}\normalsize
+%\setlength{\parskip}{\baselineskip}\normalsize
+
+
+\chapter*{Agradecimientos}
+\input{02-agradecimientos} 
+\input{blanco}
+\newpage
+
+
+\renewcommand{\baselinestretch}{1.15}\normalsize
+%\setlength{\parskip}{\baselineskip}\normalsize
+
+%\pagestyle{empty}
+%\setlength{\parskip}{1mm}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}  
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+
+%\begin{spacing}{0.7}
+%\setlength{\parskip}{\baselineskip}\normalsize
+%\newpage
+\setlength{\glsdescwidth}{11cm}
+\printnoidxglossary[type=\acronymtype,style=long,title=Lista de Acr\'onimos]{}
+
+%    \addcontentsline{toc}{chapter}{\protect\numberline{}{Lista de Acr\'onimos}}
+%    \markboth{Lista de Acr\'onimos}{Lista de Acr\'onimos}
+    
+    
+\renewcommand*{\glsgroupskip}{}
+\glsgroupskip
+
+ 
+%\addcontentsline{toc}{chapter}{Lista de Acrónimos}
+ 
+%\end{spacing}
+%fin acronimos
+
+\newpage
+\input{blanco}
+\clearpage 
+
+\chapter*{Resumen}\label{resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+\input{04.1-resumen}
+
+\chapter*{Abstract}\label{abs}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{04-abstract}
+%\input{blanco}
+
+
+\end{frontmatter}
+\mainmatter
+
+% New pagestyle
+\pagestyle{fancy}
+
+% New numbering
+\pagenumbering{arabic}
+
+\begin{otherlanguage}{spanish}
+	
+	\pagestyle{fancy}
+	% New numbering
+	%\pagenumbering{arabic}
+	\nociterec{*}
+
+	\renewcommand{\tablename}{Tabla}
+	
+
+\chapter{Introducci\'on}\label{Capitulo1}
+\input{05-introduction} 
+	
+\chapter{Ransomware}\label{Capitulo2}
+\input{06-ransomware} 
+
+\chapter{Análisis e Identificación de Malware}\label{Capitulo3}
+\input{07-analisis-id-malware} 
+
+%trabajos relaccionados	
+\chapter{Estado del Arte}\label{Capitulo4}
+\input{07-estadodelarte} 
+
+\chapter{Técnica de Detección de Ransomware Propuesta}\label{Capitulo5}
+\input{08-sistemapropuesto} 
+
+\chapter{Experimentos y Resultados}\label{Capitulo6}
+\input{10-experimentos}
+
+\chapter{Conclusiones y Trabajo Futuro}\label{Capitulo7}
+\input{12-conclusiones}
+
+\chapter{Contribuciones Individuales}\label{Capitulo8}
+\input{11-contribuciones}
+
+\chapter{Introduction}\label{Capitulo9}
+\input{05.1-introIngles}
+
+\chapter{Conclusions and Future Work}\label{Capitulo10}
+\input{12.1-conclusionesIngles}
+
+\appendix
+
+%\chapter{Entorno y laboratorio de análisis}
+%\label{anexo-a} \input{anexo-a}
+
+\chapter{Análisis de una Muestra con Cuckoo Sandbox}
+\label{anexo-b} \input{anexo-b}
+
+\chapter{Lista Extendida de las Familias de Ransomware}
+\label{anexo-1} \input{anexo1-familias}
+
+
+
+\end{otherlanguage}
+{\small
+	\bibliographystyle{alpha}
+	\bibliography{biblio}
+}
+
+\end{document}
