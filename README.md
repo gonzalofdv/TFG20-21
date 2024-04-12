@@ -1,6 +1,6 @@
 # Detección de Amenazas Ransomware en Redes Empresariales EDR
 
-#### Trabajo de Fin de Grado curso 2020-2021 realizado por Gonzalo Figueroa del Val, Marina López Osorio y Gonzalo Fernández Megia en los Grados en Ingeniería Informática, Ingeniería del Software e Ingeniería de Computadores.
+#### Trabajo de Fin de Grado curso 2020-2021 realizado por Gonzalo Figueroa del Val y Gonzalo Fernández Megia en los Grados en Ingeniería Informática e Ingeniería de Computadores.
 
 #### Manual de uso del sistema propuesto
 
